@@ -1,11 +1,14 @@
 package org.newinstance.havis.model;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+
 /**
  * User: u207365
  * Date: 19.06.12
  * Time: 14:49
  */
-public class BP {
+public class BP extends Line {
 
     private double x = 0;
     private double y = 0;
@@ -17,6 +20,8 @@ public class BP {
     public BP(String uic, String name) {
         this.uic = uic;
         this.name = name;
+        this.setStroke(Color.BLUE);
+        this.setStrokeWidth(1.0);
     }
 
     public String toString() {
@@ -29,6 +34,8 @@ public class BP {
 
     public void setX(double x) {
         this.x = x;
+        this.setStartX((x-7)*800);
+        this.setEndX((x-7)*800+1);
     }
 
     public double getY() {
@@ -37,6 +44,8 @@ public class BP {
 
     public void setY(double y) {
         this.y = y;
+        this.setStartY((y-47)*500);
+        this.setEndY((y-47)*500+1);
     }
 
     public int getZ() {

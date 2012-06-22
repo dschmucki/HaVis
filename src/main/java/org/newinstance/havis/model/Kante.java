@@ -10,7 +10,7 @@ public class Kante {
     private BP von;
     private BP nach;
 
-    private int count = 0;
+    private int count = 1;
 
     public Kante(BP von, BP nach) {
         this.von = von;
@@ -19,6 +19,10 @@ public class Kante {
 
     public void incrementCount() {
         count++;
+    }
+
+    public String toString() {
+        return von.getUic() + "-" + nach.getUic() + ": " + count;
     }
 
     public BP getVon() {
