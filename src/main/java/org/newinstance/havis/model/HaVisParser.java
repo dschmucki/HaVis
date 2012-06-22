@@ -47,7 +47,8 @@ public class HaVisParser {
                     String uic = s.substring(0, 7);
                     double x = Double.parseDouble(s.substring(8, 18).trim());
                     double y = Double.parseDouble(s.substring(19, 29).trim());
-                    int z = Integer.parseInt(s.substring(30, 36).trim());
+                    int z = 0;
+//                    int z = Integer.parseInt(s.substring(30, 36).trim());
 
                     model.addKoordinaten(uic, x, y, z);
                 }

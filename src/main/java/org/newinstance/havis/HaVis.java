@@ -37,17 +37,23 @@ public class HaVis extends Application {
     public void start(Stage stage) throws Exception {
 
         parser.setModel(model);
-        parser.parseBp("");
-        parser.parseKoordinaten("");
-        parser.parseKanten("");
+        System.out.println("Start parsing BP...");
+        parser.parseBp("D:\\BAHNHOF");
+        System.out.println("Finished parsing BP.");
+        System.out.println("Start parsing Koordinaten...");
+        parser.parseKoordinaten("D:\\BFKOORD_GEO");
+        System.out.println("Finished parsing Koordinaten.");
+        System.out.println("Start parsing Kanten...");
+        parser.parseKanten("D:\\FPLAN");
+        System.out.println("Finished parsing Kanten.");
 
-        for (BP bp : model.getAllBp()) {
+     /*   for (BP bp : model.getAllBp()) {
             System.out.println(bp.toString());
         }
 
         for (Kante k : model.getAllKante()) {
             System.out.println(k.toString());
-        }
+        }*/
 
         BorderPane pane = BorderPaneBuilder.create()
                 .top(
@@ -62,6 +68,7 @@ public class HaVis extends Application {
                 .build();
 
         pane.getChildren().addAll(model.getAllBp());
+        pane.getChildren().addAll(model.getAllKante());
 
         stage.setScene(sceneRef);
         stage.setTitle(APPLICATION_TITLE);

@@ -20,8 +20,8 @@ public class BP extends Line {
     public BP(String uic, String name) {
         this.uic = uic;
         this.name = name;
-        this.setStroke(Color.BLUE);
-        this.setStrokeWidth(1.0);
+        setStroke(Color.BLUE);
+        setStrokeWidth(1.0);
     }
 
     public String toString() {
